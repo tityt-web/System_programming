@@ -1,0 +1,16 @@
+mkdir -p "Work/Лабораторная работа №1!" Work/Korykhov
+chmod 772 "Work/Лабораторная работа №1!"
+chmod 200 Work/Korykhov
+touch "Work/Text @1" "Work/Text $2" "Work/Text #3"
+printf "Птица говорун отличается умом и сообразительностью!\n\n«Отличается умом, отличается сообразительностью...»\n" > "Work/Text @1"
+cp "Work/Text @1" "Work/Text $2"
+mv "Work/Text $2" "Work/Лабораторная работа №1!"/
+cp "Work/Text @1" Work/Korykhov/
+tar -czf Work/MyAchiv.tar.gz -C Work "Text @1" "Text #3"
+head -n 1 "Work/Text @1" > "Work/Text #3"
+printf "\nБудь осторожен! Преступник вооружен!\n" >> "Work/Text #3"
+sudo sh -c 'tac "Work/Text @1" > Work/Korykhov/Result_one'
+sudo mv Work/Korykhov/Result_one Work/Korykhov/Result_two
+sudo find Work/Korykhov -maxdepth 1 -name "T*" -exec basename {} \; > "Work/Лабораторная работа №1!/Result_3"
+uname -a >> "Work/Лабораторная работа №1!/Result_3"
+date >> "Work/Лабораторная работа №1!/Result_3"
