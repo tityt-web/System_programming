@@ -1,18 +1,17 @@
-format ELF executable 3
-entry start
+format ELF64 executable 3
 
-section '.data' readable writeable
+segment readable writeable
 msg db 'Korykhov', 10, 'Ivan', 10, 'Andreevich', 10
 msg_len = $ - msg
 
-section '.text' executable readable
-start:
-mov eax, 4
-mov ebx, 1
-mov ecx, msg
-mov edx, msg_len
-int 0x80
+segment readable executable
+_start:
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, msg
+    mov rdx, msg_len
+    syscall
 
-mov eax, 1
-xor ebx, ebx
-int 0x80
+    mov rax, 60
+    xor rdi, rdi
+    syscall
