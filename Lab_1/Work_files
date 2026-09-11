@@ -14,3 +14,4 @@ sudo mv Work/Korykhov/Result_one Work/Korykhov/Result_two
 sudo find Work/Korykhov -maxdepth 1 -name "T*" -exec basename {} \; > "Work/Лабораторная работа №1!/Result_3"
 uname -a >> "Work/Лабораторная работа №1!/Result_3"
 date >> "Work/Лабораторная работа №1!/Result_3"
+gdb -batch -ex "file Lab_1/C_version" -ex "disassemble main" > Lab_1/sandbox/Disassemble
