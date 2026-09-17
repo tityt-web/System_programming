@@ -1,17 +1,20 @@
-mkdir -p "Work/Лабораторная работа №1!" Work/Korykhov
-chmod 772 "Work/Лабораторная работа №1!"
-chmod 200 Work/Korykhov
-touch "Work/Text @1" "Work/Text $2" "Work/Text #3"
-printf "Птица говорун отличается умом и сообразительностью!\n\n«Отличается умом, отличается сообразительностью...»\n" > "Work/Text @1"
-cp "Work/Text @1" "Work/Text $2"
-mv "Work/Text $2" "Work/Лабораторная работа №1!"/
-cp "Work/Text @1" Work/Korykhov/
-tar -czf Work/MyAchiv.tar.gz -C Work "Text @1" "Text #3"
-head -n 1 "Work/Text @1" > "Work/Text #3"
-printf "\nБудь осторожен! Преступник вооружен!\n" >> "Work/Text #3"
-sudo sh -c 'tac "Work/Text @1" > Work/Korykhov/Result_one'
-sudo mv Work/Korykhov/Result_one Work/Korykhov/Result_two
-sudo find Work/Korykhov -maxdepth 1 -name "T*" -exec basename {} \; > "Work/Лабораторная работа №1!/Result_3"
-uname -a >> "Work/Лабораторная работа №1!/Result_3"
-date >> "Work/Лабораторная работа №1!/Result_3"
-gdb -batch -ex "file Lab_1/C_version" -ex "disassemble main" > Lab_1/sandbox/Disassemble
+mkdir Work
+cd Work
+mkdir 'Лабораторная работа №1!' 'Корыхов Иван Андреевич'
+touch 'Text @1' 'Text $2' 'Text #3'
+printf 'Птица говорун отличается умом и сообразительностью!\nОтличается умом, отличается сообразительностью...\n' > 'Text @1'
+cat 'Text @1' > 'Text $2'
+mv 'Text $2' 'Лабораторная работа №1!'/
+cp 'Text @1' 'Корыхов Иван Андреевич'/
+head -n 1 'Text @1' > 'Text #3'
+echo 'Будь осторожен! Преступник вооружен!' >> 'Text #3'
+gzip -k 'Text @1' 'Text #3'
+tar -cf MyAchiv 'Text @1.gz' 'Text #3.gz'
+rm 'Text @1.gz' 'Text #3.gz'
+tac 'Text @1' > 'Корыхов Иван Андреевич/Result_one'
+mv 'Корыхов Иван Андреевич/Result_one' 'Корыхов Иван Андреевич/Result_two'
+cat 'Корыхов Иван Андреевич'/T* > 'Лабораторная работа №1!/Result_3'
+uname -a >> 'Лабораторная работа №1!/Result_3'
+date >> 'Лабораторная работа №1!/Result_3'
+chmod 772 'Лабораторная работа №1!'
+chmod 200 'Корыхов Иван Андреевич'

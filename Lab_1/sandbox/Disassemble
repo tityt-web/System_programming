@@ -1,6 +1,23 @@
+]633;E;echo "=== ASM VERSION (korykhov) ===";df929b4f-a666-40fb-a636-e1cf99a9f7c0]633;C=== ASM VERSION (korykhov) ===
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <https://debuginfod.ubuntu.com>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+
+Program stopped.
+0x08048074 in ?? ()
+=> 0x8048074:	mov    $0x4,%eax
+   0x8048079:	mov    $0x1,%ebx
+   0x804807e:	mov    $0x8049093,%ecx
+   0x8048083:	mov    $0x19,%edx
+   0x8048088:	int    $0x80
+   0x804808a:	mov    $0x1,%eax
+   0x804808f:	xor    %ebx,%ebx
+   0x8048091:	int    $0x80
 
 === C VERSION ===
-
 
 This GDB supports auto-downloading debuginfo from the following URLs:
   <https://debuginfod.ubuntu.com>
@@ -8,13 +25,26 @@ Enable debuginfod for this session? (y or [n]) [answered N; input not from termi
 Debuginfod has been disabled.
 To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
 Dump of assembler code for function main:
-   0x0000000000001149 <+0>:	endbr64
-   0x000000000000114d <+4>:	push   %rbp
-   0x000000000000114e <+5>:	mov    %rsp,%rbp
-   0x0000000000001151 <+8>:	lea    0xeac(%rip),%rax        # 0x2004
-   0x0000000000001158 <+15>:	mov    %rax,%rdi
-   0x000000000000115b <+18>:	call   0x1050 <puts@plt>
-   0x0000000000001160 <+23>:	mov    $0x0,%eax
-   0x0000000000001165 <+28>:	pop    %rbp
-   0x0000000000001166 <+29>:	ret
+   0x0000118d <+0>:	lea    0x4(%esp),%ecx
+   0x00001191 <+4>:	and    $0xfffffff0,%esp
+   0x00001194 <+7>:	push   -0x4(%ecx)
+   0x00001197 <+10>:	push   %ebp
+   0x00001198 <+11>:	mov    %esp,%ebp
+   0x0000119a <+13>:	push   %ebx
+   0x0000119b <+14>:	push   %ecx
+   0x0000119c <+15>:	call   0x11c9 <__x86.get_pc_thunk.ax>
+   0x000011a1 <+20>:	add    $0x2e37,%eax
+   0x000011a6 <+25>:	sub    $0xc,%esp
+   0x000011a9 <+28>:	lea    -0x1fd0(%eax),%edx
+   0x000011af <+34>:	push   %edx
+   0x000011b0 <+35>:	mov    %eax,%ebx
+   0x000011b2 <+37>:	call   0x1040 <puts@plt>
+   0x000011b7 <+42>:	add    $0x10,%esp
+   0x000011ba <+45>:	mov    $0x0,%eax
+   0x000011bf <+50>:	lea    -0x8(%ebp),%esp
+   0x000011c2 <+53>:	pop    %ecx
+   0x000011c3 <+54>:	pop    %ebx
+   0x000011c4 <+55>:	pop    %ebp
+   0x000011c5 <+56>:	lea    -0x4(%ecx),%esp
+   0x000011c8 <+59>:	ret
 End of assembler dump.
